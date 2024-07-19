@@ -1,0 +1,787 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://fhys.github.io/blog/2024/07/19/tenet%E7%AC%94%E8%AE%B0/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
+    
+    
+      
+        <title>TENET笔记 - 慕何的博客</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.6543a935.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tenet" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="慕何的博客" class="md-header__button md-logo" aria-label="慕何的博客" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            慕何的博客
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              TENET笔记
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="慕何的博客" class="md-nav__button md-logo" aria-label="慕何的博客" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    慕何的博客
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to Liang Huawen's Blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href="../../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2024/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2024
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
+                        <time datetime="2024-07-19 00:00:00" class="md-ellipsis">July 19, 2024</time>
+                      </div>
+                    </li>
+                    
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5Z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              6 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+
+
+<h1 id="tenet">TENET笔记</h1>
+<ul>
+<li>TENET: A Framework for Modeling Tensor Dataflow Based on Relation-centric Notation</li>
+<li>作者： 卢丽强，罗子璋，梁云*</li>
+<li>单位：北京大学</li>
+<li>ISCA‘21</li>
+</ul>
+<h1 id="1abstract">1.Abstract</h1>
+<p>提出一种以关系为中心的表示法(relation-centric notation)来描述张量计算的硬件数据流。relation-centric notation指定了硬件数据流、PE互联和数据分配。通过复杂的仿射变换(基于多面体库isl、barvinok)，相比计算为中心和数据为中心的表示更具表现力，支持精确的数据复用、带宽、延迟以及能量估计。和最先进的数据为中心的表示相比，可以获得更复杂的数据流，使得CONV和GEMM计算kernel的延迟分别减少了37.4%和51.4%。</p>
+<h1 id="2introduction">2.Introduction</h1>
+<p>空间架构定义为由PE阵列和memory hierarchy组成的架构，PE通过片上互联实现数据复用。</p>
+<p>空间架构通过多种可选的数据流进行划分。张量计算描述为一个嵌套循环，一个硬件数据流被描述为</p>
+<ol>
+<li>循环实例被分配给PE阵列</li>
+<li>PE上上循环实例的执行顺序</li>
+</ol>
+<blockquote>
+<p><code>c++
+for(m=1;m&lt;M;m++)
+  for(n=1;n&lt;N;n++)
+      for(k=1;k&lt;K;k++)
+          S:C[m,n] += A[m,k]*B[k,n]</code></p>
+<p>对于以上一个矩阵乘法的三重循环，有三维迭代空间，一个循环实例对应于一个语句实例，即<span class="arithmatex">\(S(m,n,k)\)</span>。定义PE的集合(space-stamp)<span class="arithmatex">\(\{PE(x,y) | x\in[1,X], y \in [1,Y]\}\)</span>。</p>
+<p>1可以被描述为一个映射<span class="arithmatex">\(S(m,n,k)\rightarrow PE(x,y)\)</span>  </p>
+<p>2可以描述为<span class="arithmatex">\(S(m,n,k)|T(t) PE(x,y)\rightarrow S(m',n',k')|T(t+1) PE(x,y)\)</span>​</p>
+</blockquote>
+<p>之前的以计算为中心和数据为中心的表示不能完整表示设计空间，如不能做仿射变换。以计算为中心的表示不能直接对数据传输和重用进行建模。数据中心的表示建模没有显示的描述张量元素的维度，计算的性能的指标不够准确。</p>
+<p>提出关系中心的表示，形式化的定义了</p>
+<ul>
+<li>循环实例和PE的关系</li>
+<li>循环实例在PE上执行顺序</li>
+<li>PE以及相应被赋予的张量元素的关系</li>
+<li>PE间的互联关系</li>
+</ul>
+<p>前两点描述了数据流，第三点描述了PE张量元素是什么时候被哪个PE访问，第四点描述张量元素是如何在PE间移动的。</p>
+<h1 id="3backround">3.Backround</h1>
+<h2 id="31-notation-basics">3.1 Notation Basics</h2>
+<p>​<img alt="image" src="../../../../TENET%E7%AC%94%E8%AE%B0/assets/image-20240515101837-8wcey7n.png" />​</p>
+<ul>
+<li>
+<p>迭代域(Iteration Domain)</p>
+</li>
+<li>
+<p>一个具有一个语句S的嵌套循环，其迭代域<span class="arithmatex">\(D_S\)</span>是包含所有循环实例的集合，每个循环实例可以表示为<span class="arithmatex">\(S[\vec{n}]\)</span>，是<span class="arithmatex">\(D_S\)</span>中的一个点。</p>
+</li>
+<li>如对于一个一维卷积，其迭代域记为<span class="arithmatex">\(D_S=\{S[i,j]:0\leq i&lt;4,0\leq j&lt;3\}\)</span></li>
+<li>
+<p>访问函数(Access Function)</p>
+</li>
+<li>
+<p>给定一个循环实例，访问函数返回语句S访问的张量元素。使用一个关系(映射)来表张量<span class="arithmatex">\(F\)</span>的访问函数。</p>
+</li>
+<li>
+<div class="arithmatex">\[
+    \begin{equation}
+    A_{S,F} = \{S[\vec{n}]\rightarrow F[\vec{f}]\}
+    \end{equation}
+    \]</div>
+</li>
+<li>
+<div class="arithmatex">\[
+    \vec{f} = A_{S,F}\vec{n}
+    \]</div>
+</li>
+<li>对于Fig.1中的一维卷积，张量<span class="arithmatex">\(Y\)</span>的访问函数是<span class="arithmatex">\(\{S[i,j]\rightarrow Y[i]: 0\leq i &lt;4, 0\leq j &lt;3\}\)</span>，表示循环实例<span class="arithmatex">\(S[i,j]\)</span>访问张量元素<span class="arithmatex">\(Y[i]\)</span>，可表示为如下形式</li>
+<li>
+<div class="arithmatex">\[
+    \vec{f}=
+    \begin{bmatrix}
+     0 &amp;1
+    \end{bmatrix}
+    \vec{n}
+    \]</div>
+</li>
+</ul>
+<h2 id="32">3.2 现有数据流表示的限制</h2>
+<p>​<img alt="image" src="../../../../TENET%E7%AC%94%E8%AE%B0/assets/image-20240515104441-z040zo3.png" />​</p>
+<p>不支持偏斜的数据访问</p>
+<h1 id="4">4 关系记号</h1>
+<h2 id="41-dataflow-relation">4.1 Dataflow Relation</h2>
+<p>给定语句<span class="arithmatex">\(S\)</span>和迭代域<span class="arithmatex">\(D_S\)</span>，以及相应的迭代向量<span class="arithmatex">\(\vec{n}\)</span>，dataflow被定义为如下形式</p>
+<div class="arithmatex">\[
+\begin{equation}
+\Theta_{S,D}=\{S[\vec{n}]\rightarrow(PE[\vec{p}]\; |\;T[\vec{t}])\}, \quad S[\vec{n}] \in D_S 
+\end{equation}
+\]</div>
+<p>space-stamp就是PE的坐标，time-stamp就是循环实例在PE上执行的时间。所以<span class="arithmatex">\(\Theta_{S,D}\)</span>描述了循环实例<span class="arithmatex">\(S[\vec{n}]\)</span>如何被付给了一个spacetime-stamp(即space-stamp为<span class="arithmatex">\(PE[\vec{p}]\)</span>，time-stamp是<span class="arithmatex">\(T[\vec{t}]\)</span>)，执行顺序是由两个时间戳的字典序(lexicograohical order)决定的。<span class="arithmatex">\(\vec{p}\)</span>是和PE阵列的维度相同的多维向量。<span class="arithmatex">\(\vec{t}\)</span>可以是多维向量，因为PE阵列的大小可以小于整个迭代域，即使用有多个维度的索引，如卷积网络，将OX和OY进行空间展开，使用<span class="arithmatex">\((b,g,k,c)\)</span>来索引时间。</p>
+<p>脉动阵列可以表示为</p>
+<div class="arithmatex">\[
+\begin{equation}
+\Theta_{S,D}=\{ S[i,j,k] \rightarrow (PE[i,j]\; | \; T[i+j+k])\}
+\end{equation}
+\]</div>
+<p>可以通过整数线性规划来得到相应的数据流，即在时刻t时，哪些PE执行哪个循环实例。对于时间戳<span class="arithmatex">\(T[1]\)</span>，可以得到以下的方程和约束，以及相应的要被执行的循环实例</p>
+<div class="arithmatex">\[
+\begin{gather*}
+i+j+k=1\\
+constraint:0\leq i,j \lt 2, 0\leq k \lt 4 \\
+loop\; instance:[i,j,k]=[0,0,1],[1,0,0],[0,1,0]
+\end{gather*}
+\]</div>
+<p>相对data-centric和compute-centric的记法，具有能够表达更大设计空间。对于一个2维PE阵列，在data-centric的记号中，令<span class="arithmatex">\(size\)</span>和<span class="arithmatex">\(offset\)</span>都为1(<span class="arithmatex">\(size\)</span>决定了这个维度空间展开，其子阵列的大小，<span class="arithmatex">\(offset\)</span>决定子阵列分配的范围，如果子阵列Sub[0]分配了[0,1]，Sub[1]分配了[2,3],则offset为2，如果Sub[0]分配了[0,2]，Sub[1]分配了[1,3],offset为1)，其设计空间大小为<span class="arithmatex">\(n!\binom{n}{2}\)</span>（<span class="arithmatex">\(n!\)</span>是维度顺序，<span class="arithmatex">\(\binom{n}{2}\)</span>是选择两个维度进行空间展开）；而对于TENET的设计空间大小为<span class="arithmatex">\(O(2^{n^{2}})\)</span>（将一种仿射变换看作一种数据流，仿射变换是一个n*n的矩阵，每个元素可以取0和1，去除一些不符合需求的情况,因此是<span class="arithmatex">\(O(2^{n^2})\)</span>)</p>
+<p>仿射变换的形式如下，其中<span class="arithmatex">\(\Theta_{S,D}\)</span>是仿射变换矩阵，对应于数据流映射<span class="arithmatex">\(\Theta_{S,D}\)</span>​</p>
+<div class="arithmatex">\[
+\vec{ST}=\begin{bmatrix}
+ \vec{p}\\
+\vec{t}
+\end{bmatrix}
+=\Theta_{S,D}\vec{n}
+\]</div>
+<p>对于Eq.3的数据流，<span class="arithmatex">\(T_{dataflow}\)</span>形式如下</p>
+<div class="arithmatex">\[
+\Theta_{S,D}=
+\begin{bmatrix}
+  1 &amp;  &amp; \\
+    &amp;1 &amp; \\
+  1 &amp;1 &amp;1
+\end{bmatrix}
+\]</div>
+<div class="arithmatex">\[
+\vec{p}=
+\begin{bmatrix}
+  1 &amp;0  &amp;0 \\
+  0  &amp;1 &amp;0 
+\end{bmatrix}
+\vec{n}
+,\quad 
+\vec{t}=
+\begin{bmatrix}
+  1 &amp;1  &amp;1 
+\end{bmatrix}
+\vec{n}
+\]</div>
+<p>对于维度大小大于PE阵列尺寸的，加入求余和除法记号来支持(拟仿射变换，quasi-affine transformation)</p>
+<div class="arithmatex">\[
+\Theta_{S,D}=\{ S[i,j,k] \rightarrow (PE[i\ mod\ 8,\ j \ mod \ 8]\; | \; T[i/8,j/8,(i\ mod\ 8+\ j \ mod \ 8+k)])\}
+\]</div>
+<h2 id="42-data-assignment-relation">4.2 Data Assignment Relation</h2>
+<p>data assignment relation是指特定PE在特定时刻访问的元素，即spacetime-stamp到元素的映射，由访问函数是循环实例到元素的映射，数据流是循环实例到spacetime-stamp的映射，所以可以由数据流和访问函数得到data assignment relation</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\vec{ST}=\Theta_{S,D}\vec{n} 
+\quad
+\Longrightarrow
+\quad
+ \vec{n} = \Theta_{S,D}^{-1}\vec{ST}\\
+\vec{f}=A_{S,F}\vec{n}=A_{S,F}\Theta_{S,D}^{-1}\vec{ST}=A_{D,F}\vec{ST}
+\end{aligned}
+\]</div>
+<div class="arithmatex">\[
+\begin{equation}
+A_{D,F} = \Theta_{S,D}^{-1}\cdot A_{S,F}=\{(PE[\vec{p}]\ |\ T[\vec{t}])\rightarrow F[\vec{f}]\}
+\end{equation}
+\]</div>
+<p>$$</p>
+<p>$$</p>
+<p>对下图所示的数据流，tensor Y的数据赋予可以表示为</p>
+<div class="arithmatex">\[
+A_{D,F_Y}=\{(PE[i,j]\ | \ T[i+j+k])\rightarrow Y[i,j]\}
+\]</div>
+<div class="arithmatex">\[
+A_{S,F}\Theta_{S,D}^{-1}=
+\begin{pmatrix}
+  1 &amp;0  &amp;0 \\
+  0  &amp;1 &amp;0 
+\end{pmatrix}
+\begin{pmatrix}
+  1 &amp;  &amp; \\
+    &amp;1 &amp; \\
+  1 &amp;1 &amp;1
+\end{pmatrix}^{-1}
+=
+\begin{pmatrix}
+  1 &amp;0  &amp;0 \\
+  0  &amp;1 &amp;0 
+\end{pmatrix}
+\begin{pmatrix}
+  1 &amp;  &amp; \\
+    &amp;1 &amp; \\
+  -1 &amp;-1 &amp;1
+\end{pmatrix}
+=
+\begin{pmatrix}
+  1 &amp;0  &amp;0 \\
+  0  &amp;1 &amp;0 
+\end{pmatrix}
+\]</div>
+<p>​<img alt="image" src="../../../../TENET%E7%AC%94%E8%AE%B0/assets/image-20240629192115-bntyf8s.png" />​</p>
+<p>‍</p>
+<h2 id="43-pe-interconnection">4.3 PE interconnection</h2>
+<p>对于一个PE阵列，PE互联是一个集合，集合内的每个元素是描述一个PE到另外一个PE的映射(PE作为顶点，互联就是边)</p>
+<div class="arithmatex">\[
+\begin{equation}
+I_{PE_1,PE_2}=\{PE[\vec{p_1}]\rightarrow PE[\vec{p_2}]\}\ :c_1,...,c_k
+\end{equation}
+\]</div>
+<p>其中<span class="arithmatex">\(c_1,...,c_k\)</span>是用于指定拓扑的条件。对于Fig. 3的2D脉动阵列，PE能够复用邻近PE的输入数据。TENET建模了三种互联</p>
+<p>​<img alt="image" src="../../../../TENET%E7%AC%94%E8%AE%B0/assets/image-20240629203704-g9on2ti.png" /><img alt="image" src="../../../../TENET%E7%AC%94%E8%AE%B0/assets/image-20240629203714-engaa99.png" />​</p>
+<h2 id="44-spacetime-stamp-map-relation">4.4 Spacetime-stamp Map Relation</h2>
+<p>通过data assignment和interconnection relation，基于被访问元素和元素的移动，可以关联不同的spacetime-stamp</p>
+<p>给定一个dataflow，spacetime-map是一个映射的集合，元素将一个spacetime-stamp映射到另外一个spacetime-stamp，即spacetime-stamp间的执行顺序。如果以spacetime-stamp为顶点建立一个图，spacetime-map就是边。</p>
+<div class="arithmatex">\[
+M_{D,D'}=\{(PE[\vec{p_1}]\ |\ T[\vec{t_1}])\rightarrow (PE[\vec{p_1}]\ |\ T[\vec{t_1}])\}
+\]</div>
+<p>通过使用data assignment relation识别spacetime-stamp所用的数据，可以找到数据的时空复用。</p>
+<p>假设<span class="arithmatex">\(D\)</span>和<span class="arithmatex">\(D'\)</span>的时间距离小于等于1，<span class="arithmatex">\(D\)</span>和<span class="arithmatex">\(D'\)</span>所指定的PE是互联的，对于Fig.3可以给出3个map</p>
+<p>​<img alt="image" src="../../../../TENET%E7%AC%94%E8%AE%B0/assets/image-20240629210528-o404vy3.png" />​</p>
+<p>map 1结合<span class="arithmatex">\(A_{D,F_Y}\)</span>可以得到以下式子，从而得到Y[0,0]的时间复用，同理可以在map 2和3得到A和B的空间复用</p>
+<p>​<img alt="image" src="../../../../TENET%E7%AC%94%E8%AE%B0/assets/image-20240629210620-wurtxar.png" /><img alt="image" src="../../../../TENET%E7%AC%94%E8%AE%B0/assets/image-20240629210730-t42od7d.png" />​</p>
+<p>可以通过spacetime-stamp map结合data assignment relation得到数据的时间和空间复用</p>
+<h1 id="5">5 性能模型</h1>
+<p>通过relation来建模性能</p>
+<h2 id="51-data-reuse-and-volume-model">5.1 data reuse and volume model</h2>
+<p>​<img alt="image" src="../../../../TENET%E7%AC%94%E8%AE%B0/assets/image-20240630194803-clxy8jl.png" />​</p>
+<p>使用<span class="arithmatex">\(sum()\)</span>函数来计算容量volume，即计算集合的势。</p>
+<ul>
+<li>
+<p>TotalVolume：通过整个spacetime-stamp计算总共被访问的元素数</p>
+</li>
+<li>
+<p>​<img alt="image" src="../../../../TENET%E7%AC%94%E8%AE%B0/assets/image-20240630195158-pvm6q6u.png" />​</p>
+</li>
+<li>​<img alt="image" src="../../../../TENET%E7%AC%94%E8%AE%B0/assets/image-20240630195210-uhjyn0y.png" />​</li>
+<li>Fig. 5(a)所示不同time-stamp访问的数据，包含了复用</li>
+<li>
+<p>ReuseVolume：是多个spacetime-stamp中数据的复用数量</p>
+</li>
+<li>
+<p>对于Fig. 5(a),复用是相邻两个spacetime-stamp中重叠的部分的数量。</p>
+</li>
+<li>由spacetime-map <span class="arithmatex">\(M_{D,D'}\)</span>决定两个spacetime-stamp相邻，spacetime-stamp map被interconnection relation限制。</li>
+<li>即只有满足等式5的两个PE才能贡献复用（即访问了相同元素，但两个PE不相邻也是不满足复用。</li>
+<li>同时time-stamp也限制复用发生。对于脉动阵列，时间约束设置为1，即相邻两个time-stamp间会发生复用；对于多播，时间约束设置为0，即同一个time-stamp内发生约束。</li>
+<li>
+<p>​<img alt="image" src="../../../../TENET%E7%AC%94%E8%AE%B0/assets/image-20240630200830-mkt8qb6.png" />脉动阵列</p>
+</li>
+<li>
+<p>UniqueVolume：被唯一访问的张量数据。Fig. 5(a)中UniqueVolume随时间逐渐扩张</p>
+</li>
+<li>
+<p>和数据复用类似，必须考虑相邻spacetime-stamp，复用只发生在相邻spacetime-stamp中，所以相邻spacetime-stamp中新出现的数据则可以认为是Unique。(从阵列级考虑）</p>
+</li>
+<li>给出的是阵列和scratchpad之间传输所需的最小数据大小。</li>
+<li>​<img alt="image" src="../../../../TENET%E7%AC%94%E8%AE%B0/assets/image-20240630202111-rwjbnfp.png" />​</li>
+<li>ReuseFactor</li>
+<li>SpatialReuseVolume：在多个PE间复用数据的数量，包含广播和脉动阵列的前递(forwarding)</li>
+<li>TemporalReuseVolume：在相同PE里的多个时间戳之间的复用</li>
+</ul>
+<h2 id="52">5.2 延迟和带宽模型</h2>
+<p>假设buffer、network和算术单元流水线工作，并且使用了double buffer来隐藏延迟。所以整体延迟为通信和计算延迟的最大值。</p>
+<ul>
+<li>基于UniqueVolume来评估PE阵列和scratchpad之间的数据搬运量。通信延迟为</li>
+</ul>
+<div class="arithmatex">\[
+\begin{equation}
+    \begin{aligned}
+        Delay_{read}=\frac{UniqueVolume(Input)}{bandwidth}\\
+        Delay_{write}=\frac{UniqueVolume(Output)}{bandwidth}
+    \end{aligned}
+\end{equation}
+\]</div>
+<pre><code>此处的$bandwidth$是scratchpad的带宽。
+</code></pre>
+<ul>
+<li>计算延迟所有循环实例数除以平均的PE活跃数</li>
+</ul>
+<div class="arithmatex">\[
+\begin{equation}
+Delay_{compute}=\frac{sum(D_S)}{Util_{PE}\times PE\ size}
+\end{equation}
+\]</div>
+<ul>
+<li>通过计算延迟，可以计算互联带宽和scratchpad带宽。互联带宽为：</li>
+</ul>
+<div class="arithmatex">\[
+\begin{equation}
+IBW=\frac{SpatialReuseVolume}{Delay_{compute}}
+\end{equation}
+\]</div>
+<ul>
+<li>SBW是PE阵列和scratchpad之间的数据传输带宽，使用归一化的(?)的UniqueVolume和计算延迟来估计</li>
+</ul>
+<div class="arithmatex">\[
+\begin{equation}
+SBW=\frac{UniqueVolume}{Delay_{compute}}
+\end{equation}
+\]</div>
+<h1 id="6">6 实验</h1>
+<h2 id="61">6.1 实验设置</h2>
+<p>‍</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": [], "search": "../../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-"></script>
+      
+        <script src="../../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+    
+  </body>
+</html>
