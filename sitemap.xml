@@ -6,6 +6,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://fhys.github.io/Publications/</loc>
+         <lastmod>2024-07-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://fhys.github.io/blog/</loc>
          <lastmod>2024-07-19</lastmod>
          <changefreq>daily</changefreq>
