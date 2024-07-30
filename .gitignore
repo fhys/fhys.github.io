@@ -3,3 +3,4 @@ site
 .cache
 __pycache__
 *.zip
+/命令

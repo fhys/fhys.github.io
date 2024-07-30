@@ -389,7 +389,6 @@ $$
 +\vec{r}
 \right)
 \Longrightarrow
-
 \mathbf{0}
 =M_{D_{st}\rightarrow D_A}\vec{r}
 $$
@@ -403,15 +402,18 @@ $$
 $$
 \begin{equation}
 \begin{pmatrix}
- \vec{p_e}\\
+\vec{p_e}\\
 \vec{t_e}
 \end{pmatrix}
-=\Omega_{D_{st}\rightarrow E_{st}}
+=
+\Omega_{D_{st}\rightarrow E_{st}}
 \begin{pmatrix}
  \vec{p_d}\\
 \vec{t_d}
 \end{pmatrix}
-=\Omega_{D_{st}\rightarrow E_{st}}\left(
+=\Omega_{D_{st}
+\rightarrow 
+E_{st}}\left(
 \begin{pmatrix}
  \vec{p_d}\\
 \vec{t_d}
@@ -419,7 +421,6 @@ $$
 +\vec{r}
 \right)
 \Longrightarrow
-
 \mathbf{0}
 =\Omega_{D_{st}\rightarrow E_{st}}\vec{r}
 \end{equation}
@@ -437,9 +438,7 @@ $$
  \vec{p_d}\\
 \vec{t_d}
 \end{pmatrix}
-
 \Longrightarrow
-
 \begin{pmatrix}
  f(\vec{p_d})\\
 h(\vec{p_d},\vec{t_d})
@@ -449,9 +448,7 @@ h(\vec{p_d},\vec{t_d})
  \vec{p_d}\\
 \vec{t_d}
 \end{pmatrix}
-
 \Longrightarrow
-
 \Omega_{D_{st}\rightarrow E_{st}}=\begin{pmatrix}
  e_{00} & e_{01}  & 0\\
  e_{10} & e_{11}  & 0 \\
