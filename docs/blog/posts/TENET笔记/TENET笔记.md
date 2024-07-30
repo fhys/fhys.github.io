@@ -9,7 +9,7 @@ categories:
 # TENET笔记
 
 * TENET: A Framework for Modeling Tensor Dataflow Based on Relation-centric Notation
-* 作者： 卢丽强，罗子璋，梁云*
+* 作者： 卢丽强，罗梓璋，梁云*
 * 单位：北京大学
 * ISCA‘21
 
