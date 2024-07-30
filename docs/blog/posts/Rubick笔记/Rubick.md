@@ -44,11 +44,11 @@ categories:
 ### 2.A 张量基础
 
 ‍
-
-> * 迭代域(Iteration Domain)
->
->   * 一个具有一个语句S的嵌套循环，其迭代域$D_S$是包含所有循环实例的集合，每个循环实例可以表示为$S[\vec{n}]$，是$D_S$中的一个点。
->   * 如对于一个一维卷积，其迭代域记为$D_S=\{S[i,j]:0\leq i<4,0\leq j<3\}$
+??? note
+    > * 迭代域(Iteration Domain)
+    >
+    >   * 一个具有一个语句S的嵌套循环，其迭代域$D_S$是包含所有循环实例的集合，每个循环实例可以表示为$S[\vec{n}]$，是$D_S$中的一个点。
+    >   * 如对于一个一维卷积，其迭代域记为$D_S=\{S[i,j]:0\leq i<4,0\leq j<3\}$
 
 ‍
 
@@ -57,27 +57,27 @@ categories:
 $$
 D_A=\left\{A(\vec{n'})\right\}
 $$
-
-> * 访问函数(Access Function)
->
->   * 给定一个循环实例，访问函数返回语句S访问的张量元素。使用一个关系(映射)来表张量$F$的访问函数。
->   * $$
->     \begin{equation}
->     A_{S,F} = \{S[\vec{n}]\rightarrow F[\vec{f}]\}
->     \end{equation}
->     $$
->   * $$
->     \vec{f} = A_{S,F}\vec{n}
->     $$
->   * 对于Fig.1中的一维卷积，张量$Y$的访问函数是$\{S[i,j]\rightarrow Y[i]: 0\leq i <4, 0\leq j <3\}$，表示循环实例$S[i,j]$访问张量元素$Y[i]$，
->   * 可表示为如下形式
->   * $$
->     \vec{f}=
->     \begin{bmatrix}
->      0 &1
->     \end{bmatrix}
->     \vec{n}
->     $$
+??? note
+    > * 访问函数(Access Function)
+    >
+    >   * 给定一个循环实例，访问函数返回语句S访问的张量元素。使用一个关系(映射)来表张量$F$的访问函数。
+    >   * $$
+    >     \begin{equation}
+    >     A_{S,F} = \{S[\vec{n}]\rightarrow F[\vec{f}]\}
+    >     \end{equation}
+    >     $$
+    >   * $$
+    >     \vec{f} = A_{S,F}\vec{n}
+    >     $$
+    >   * 对于Fig.1中的一维卷积，张量$Y$的访问函数是$\{S[i,j]\rightarrow Y[i]: 0\leq i <4, 0\leq j <3\}$，表示循环实例$S[i,j]$访问张量元素$Y[i]$，
+    >   * 可表示为如下形式
+    >   * $$
+    >     \vec{f}=
+    >     \begin{bmatrix}
+    >      0 &1
+    >     \end{bmatrix}
+    >     \vec{n}
+    >     $$
 
 本文中使用的记号为
 
@@ -119,80 +119,80 @@ $$
 ### 2.B 空间数据流
 
 * 数据流
-
->  4.1 Dataflow Relation
->
-> 给定语句$S$和迭代域$D_S$，以及相应的迭代向量$\vec{n}$，dataflow被定义为如下形式
->
-> $$
-> \begin{equation}
-> \Theta_{S,D}=\{S[\vec{n}]\rightarrow(PE[\vec{p}]\; |\;T[\vec{t}])\}, \quad S[\vec{n}] \in D_S 
-> \end{equation}
-> $$
->
-> space-stamp就是PE的坐标，time-stamp就是循环实例在PE上执行的时间。所以$\Theta_{S,D}$描述了循环实例$S[\vec{n}]$如何被付给了一个spacetime-stamp(即space-stamp为$PE[\vec{p}]$，time-stamp是$T[\vec{t}]$)，执行顺序是由两个时间戳的字典序(lexicograohical order)决定的。$\vec{p}$是和PE阵列的维度相同的多维向量。$\vec{t}$可以是多维向量，因为PE阵列的大小可以小于整个迭代域，即使用有多个维度的索引，如卷积网络，将OX和OY进行空间展开，使用$(b,g,k,c)$来索引时间。
->
-> 脉动阵列可以表示为
->
-> $$
-> \begin{equation}
-> \Theta_{S,D}=\{ S[i,j,k] \rightarrow (PE[i,j]\; | \; T[i+j+k])\}
-> \end{equation}
-> $$
->
-> 可以通过整数线性规划来得到相应的数据流，即在时刻t时，哪些PE执行哪个循环实例。对于时间戳$T[1]$，可以得到以下的方程和约束，以及相应的要被执行的循环实例
->
-> $$
-> \begin{gather*}
-> i+j+k=1\\
-> constraint:0\leq i,j \lt 2, 0\leq k \lt 4 \\
-> loop\; instance:[i,j,k]=[0,0,1],[1,0,0],[0,1,0]
-> \end{gather*}
-> $$
->
-> 相对data-centric和compute-centric的记法，具有能够表达更大设计空间。对于一个2维PE阵列，在data-centric的记号中，令$size$和$offset$都为1($size$决定了这个维度空间展开，其子阵列的大小，$offset$决定子阵列分配的范围，如果子阵列Sub[0]分配了[0,1]，Sub[1]分配了[2,3],则offset为2，如果Sub[0]分配了[0,2]，Sub[1]分配了[1,3],offset为1)，其设计空间大小为$n!\binom{n}{2}$（$n!$是维度顺序，$\binom{n}{2}$是选择两个维度进行空间展开）；而对于TENET的设计空间大小为$O(2^{n^{2}})$（将一种仿射变换看作一种数据流，仿射变换是一个n*n的矩阵，每个元素可以取0和1，去除一些不符合需求的情况,因此是$O(2^{n^2})$)
->
-> 仿射变换的形式如下，其中$\Theta_{S,D}$是仿射变换矩阵，对应于数据流映射$\Theta_{S,D}$​
->
-> $$
-> \vec{ST}=\begin{bmatrix}
->  \vec{p}\\
-> \vec{t}
-> \end{bmatrix}
-> =\Theta_{S,D}\vec{n}
-> $$
->
-> 对于Eq.3的数据流，$T_{dataflow}$形式如下
->
-> $$
-> \Theta_{S,D}=
-> \begin{bmatrix}
->   1 &  & \\
->     &1 & \\
->   1 &1 &1
-> \end{bmatrix}
-> $$
->
-> $$
-> \vec{p}=
-> \begin{bmatrix}
->   1 &0  &0 \\
->   0  &1 &0 
-> \end{bmatrix}
-> \vec{n}
-> ,\quad 
-> \vec{t}=
-> \begin{bmatrix}
->   1 &1  &1 
-> \end{bmatrix}
-> \vec{n}
-> $$
->
-> 对于维度大小大于PE阵列尺寸的，加入求余和除法记号来支持(拟仿射变换，quasi-affine transformation)
->
-> $$
-> \Theta_{S,D}=\{ S[i,j,k] \rightarrow (PE[i\ mod\ 8,\ j \ mod \ 8]\; | \; T[i/8,j/8,(i\ mod\ 8+\ j \ mod \ 8+k)])\}
-> $$
+??? note
+    >  4.1 Dataflow Relation
+    >
+    > 给定语句$S$和迭代域$D_S$，以及相应的迭代向量$\vec{n}$，dataflow被定义为如下形式
+    >
+    > $$
+    > \begin{equation}
+    > \Theta_{S,D}=\{S[\vec{n}]\rightarrow(PE[\vec{p}]\; |\;T[\vec{t}])\}, \quad S[\vec{n}] \in D_S 
+    > \end{equation}
+    > $$
+    >
+    > space-stamp就是PE的坐标，time-stamp就是循环实例在PE上执行的时间。所以$\Theta_{S,D}$描述了循环实例$S[\vec{n}]$如何被付给了一个spacetime-stamp(即space-stamp为$PE[\vec{p}]$，time-stamp是$T[\vec{t}]$)，执行顺序是由两个时间戳的字典序(lexicograohical order)决定的。$\vec{p}$是和PE阵列的维度相同的多维向量。$\vec{t}$可以是多维向量，因为PE阵列的大小可以小于整个迭代域，即使用有多个维度的索引，如卷积网络，将OX和OY进行空间展开，使用$(b,g,k,c)$来索引时间。
+    >
+    > 脉动阵列可以表示为
+    >
+    > $$
+    > \begin{equation}
+    > \Theta_{S,D}=\{ S[i,j,k] \rightarrow (PE[i,j]\; | \; T[i+j+k])\}
+    > \end{equation}
+    > $$
+    >
+    > 可以通过整数线性规划来得到相应的数据流，即在时刻t时，哪些PE执行哪个循环实例。对于时间戳$T[1]$，可以得到以下的方程和约束，以及相应的要被执行的循环实例
+    >
+    > $$
+    > \begin{gather*}
+    > i+j+k=1\\
+    > constraint:0\leq i,j \lt 2, 0\leq k \lt 4 \\
+    > loop\; instance:[i,j,k]=[0,0,1],[1,0,0],[0,1,0]
+    > \end{gather*}
+    > $$
+    >
+    > 相对data-centric和compute-centric的记法，具有能够表达更大设计空间。对于一个2维PE阵列，在data-centric的记号中，令$size$和$offset$都为1($size$决定了这个维度空间展开，其子阵列的大小，$offset$决定子阵列分配的范围，如果子阵列Sub[0]分配了[0,1]，Sub[1]分配了[2,3],则offset为2，如果Sub[0]分配了[0,2]，Sub[1]分配了[1,3],offset为1)，其设计空间大小为$n!\binom{n}{2}$（$n!$是维度顺序，$\binom{n}{2}$是选择两个维度进行空间展开）；而对于TENET的设计空间大小为$O(2^{n^{2}})$（将一种仿射变换看作一种数据流，仿射变换是一个n*n的矩阵，每个元素可以取0和1，去除一些不符合需求的情况,因此是$O(2^{n^2})$)
+    >
+    > 仿射变换的形式如下，其中$\Theta_{S,D}$是仿射变换矩阵，对应于数据流映射$\Theta_{S,D}$​
+    >
+    > $$
+    > \vec{ST}=\begin{bmatrix}
+    >  \vec{p}\\
+    > \vec{t}
+    > \end{bmatrix}
+    > =\Theta_{S,D}\vec{n}
+    > $$
+    >
+    > 对于Eq.3的数据流，$T_{dataflow}$形式如下
+    >
+    > $$
+    > \Theta_{S,D}=
+    > \begin{bmatrix}
+    >   1 &  & \\
+    >     &1 & \\
+    >   1 &1 &1
+    > \end{bmatrix}
+    > $$
+    >
+    > $$
+    > \vec{p}=
+    > \begin{bmatrix}
+    >   1 &0  &0 \\
+    >   0  &1 &0 
+    > \end{bmatrix}
+    > \vec{n}
+    > ,\quad 
+    > \vec{t}=
+    > \begin{bmatrix}
+    >   1 &1  &1 
+    > \end{bmatrix}
+    > \vec{n}
+    > $$
+    >
+    > 对于维度大小大于PE阵列尺寸的，加入求余和除法记号来支持(拟仿射变换，quasi-affine transformation)
+    >
+    > $$
+    > \Theta_{S,D}=\{ S[i,j,k] \rightarrow (PE[i\ mod\ 8,\ j \ mod \ 8]\; | \; T[i/8,j/8,(i\ mod\ 8+\ j \ mod \ 8+k)])\}
+    > $$
 
 本文记为
 
@@ -203,63 +203,63 @@ $$
 $$
 
 * 张量移动(Tensor Movement)
-
-> 4.2 Data Assignment Relation
->
-> data assignment relation是指特定PE在特定时刻访问的元素，即spacetime-stamp到元素的映射，由访问函数是循环实例到元素的映射，数据流是循环实例到spacetime-stamp的映射，所以可以由数据流和访问函数得到data assignment relation
->
-> $$
-> \begin{aligned}
-> \vec{ST}=\Theta_{S,D}\vec{n} 
-> \quad
-> \Longrightarrow
-> \quad
->  \vec{n} = \Theta_{S,D}^{-1}\vec{ST}\\
-> \vec{f}=A_{S,F}\vec{n}=A_{S,F}\Theta_{S,D}^{-1}\vec{ST}=A_{D,F}\vec{ST}
-> \end{aligned}
-> $$
->
-> $$
-> \begin{equation}
-> A_{D,F} = \Theta_{S,D}^{-1}\cdot A_{S,F}=\{(PE[\vec{p}]\ |\ T[\vec{t}])\rightarrow F[\vec{f}]\}
-> \end{equation}
-> $$
->
-> 对下图所示的数据流，tensor Y的数据赋予可以表示为
->
-> $$
-> A_{D,F_Y}=\{(PE[i,j]\ | \ T[i+j+k])\rightarrow Y[i,j]\}
-> $$
->
-> $$
-> A_{S,F}\Theta_{S,D}^{-1}=
-> \begin{pmatrix}
->   1 &0  &0 \\
->   0  &1 &0 
-> \end{pmatrix}
-> \begin{pmatrix}
->   1 &  & \\
->     &1 & \\
->   1 &1 &1
-> \end{pmatrix}^{-1}
-> =
-> \begin{pmatrix}
->   1 &0  &0 \\
->   0  &1 &0 
-> \end{pmatrix}
-> \begin{pmatrix}
->   1 &  & \\
->     &1 & \\
->   -1 &-1 &1
-> \end{pmatrix}
-> =
-> \begin{pmatrix}
->   1 &0  &0 \\
->   0  &1 &0 
-> \end{pmatrix}
-> $$
->
-> ​![image](assets/image-20240629192115-bntyf8s.png)​
+??? note
+    > 4.2 Data Assignment Relation
+    >
+    > data assignment relation是指特定PE在特定时刻访问的元素，即spacetime-stamp到元素的映射，由访问函数是循环实例到元素的映射，数据流是循环实例到spacetime-stamp的映射，所以可以由数据流和访问函数得到data assignment relation
+    >
+    > $$
+    > \begin{aligned}
+    > \vec{ST}=\Theta_{S,D}\vec{n} 
+    > \quad
+    > \Longrightarrow
+    > \quad
+    >  \vec{n} = \Theta_{S,D}^{-1}\vec{ST}\\
+    > \vec{f}=A_{S,F}\vec{n}=A_{S,F}\Theta_{S,D}^{-1}\vec{ST}=A_{D,F}\vec{ST}
+    > \end{aligned}
+    > $$
+    >
+    > $$
+    > \begin{equation}
+    > A_{D,F} = \Theta_{S,D}^{-1}\cdot A_{S,F}=\{(PE[\vec{p}]\ |\ T[\vec{t}])\rightarrow F[\vec{f}]\}
+    > \end{equation}
+    > $$
+    >
+    > 对下图所示的数据流，tensor Y的数据赋予可以表示为
+    >
+    > $$
+    > A_{D,F_Y}=\{(PE[i,j]\ | \ T[i+j+k])\rightarrow Y[i,j]\}
+    > $$
+    >
+    > $$
+    > A_{S,F}\Theta_{S,D}^{-1}=
+    > \begin{pmatrix}
+    >   1 &0  &0 \\
+    >   0  &1 &0 
+    > \end{pmatrix}
+    > \begin{pmatrix}
+    >   1 &  & \\
+    >     &1 & \\
+    >   1 &1 &1
+    > \end{pmatrix}^{-1}
+    > =
+    > \begin{pmatrix}
+    >   1 &0  &0 \\
+    >   0  &1 &0 
+    > \end{pmatrix}
+    > \begin{pmatrix}
+    >   1 &  & \\
+    >     &1 & \\
+    >   -1 &-1 &1
+    > \end{pmatrix}
+    > =
+    > \begin{pmatrix}
+    >   1 &0  &0 \\
+    >   0  &1 &0 
+    > \end{pmatrix}
+    > $$
+    >
+    > ​![image](assets/image-20240629192115-bntyf8s.png)​
 
 本文记为
 
