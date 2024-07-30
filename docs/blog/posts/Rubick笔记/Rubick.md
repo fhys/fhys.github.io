@@ -1,10 +1,18 @@
+---
+date: 2024-07-19
+readtime: 15
+categories: 
+  - note
+---
+
+
 # Rubick
 
 * 作者：卢丽强，罗子璋，梁云*
 * 单位：北京大学，浙江大学
 * DAC’23，TCAD‘24
 
-# Abstract 
+## Abstract 
 
 之前的工作集中于张量元素的复用，而没有去探索底层架构的实现。通过将数据流分解为两种低层级IR来暴露架构实现：
 
@@ -13,7 +21,9 @@
 
 结果上，Rubick通过优化access entry IR减少了82.4%的布线资源，仅增加2.7%的延迟(使用脉动阵列的形式），通过优化data layout IR减少了70.8%的内存开销，并且通过在两种IR各自的子空间中剪枝，将DSE时间加速了$1.1\times 10^5$。
 
-# 1 Introduction
+<!-- more -->
+
+## 1 Introduction
 
 动机
 
@@ -106,11 +116,11 @@ k
 \end{pmatrix}
 $$
 
-## 2.B 空间数据流
+### 2.B 空间数据流
 
 * 数据流
 
-> ## 4.1 Dataflow Relation
+> ### 4.1 Dataflow Relation
 >
 > 给定语句$S$和迭代域$D_S$，以及相应的迭代向量$\vec{n}$，dataflow被定义为如下形式
 >
@@ -194,7 +204,7 @@ $$
 
 * 张量移动(Tensor Movement)
 
-> ## 4.2 Data Assignment Relation
+> ### 4.2 Data Assignment Relation
 >
 > data assignment relation是指特定PE在特定时刻访问的元素，即spacetime-stamp到元素的映射，由访问函数是循环实例到元素的映射，数据流是循环实例到spacetime-stamp的映射，所以可以由数据流和访问函数得到data assignment relation
 >
@@ -259,7 +269,7 @@ M_{D_{st}\rightarrow D_A} =\{(PE(\vec{p})\ |\ T(\vec{t}))\rightarrow A(\vec{n'})
 \end{equation}
 $$
 
-## 2.C motivation
+### 2.C motivation
 
 先前的框架的高层级记号不能表示出低层级的硬件实现。
 
@@ -287,7 +297,7 @@ $$
 
 上图划分出4个域，每个域都可以表示出一个多维整数点集，在TENET中没有Entry spacetime domain，缺少了对memory bank的建模，确实部分细节。
 
-## 3.A 数据流分解
+### 3.A 数据流分解
 
 为了引出entry，使用数据流的逆映射，使用Fig.2中的变换顺序，可以得到
 
@@ -355,11 +365,11 @@ Fig3.(c)中Tensor A和B的layout为
 
 data layout IR告诉entry的时空戳所访问到的元素，access entry IR告诉entry时空戳访问的元素怎么在PE阵列中运动。
 
-# 4 数据流设计空间探索
+## 4 数据流设计空间探索
 
 对于一个给定的数据流根据式子12$M_{D_{st}\rightarrow D_A}=\Omega^A_{D_{st}\rightarrow E_{st}}\times L_{E_{st}\rightarrow D_{A}}$，指定两个IR中的一个，再由式子12导出另外一个；或者给出两个IR来指定一个数据流。可以分别形成access entry和data layout的设计空间，再组合导出一个完整的数据流。对于access entry IR，其设计空间是访问方向向量的线性组合(4.A)；对于data layout IR，其设计空间是所有可能的线性变换，这个线性变换是映entry时空戳到张量元素(4.B)。
 
-## 4.A Access Entry设计空间
+### 4.A Access Entry设计空间
 
 假设数据的访问是线性的，即数据访问的索引，是迭代域索引的线性组合，$A[ai+j]$是线性的，$A[i^2]$是非线性的。
 
@@ -468,7 +478,7 @@ $$
 
 ​![image](assets/image-20240704151613-zan8xn1.png)​
 
-## 4.B data layout 设计空间
+### 4.B data layout 设计空间
 
 使用线性变换来形成设计空间。三种基础的线性变换
 
@@ -480,7 +490,7 @@ $$
 
 ​![image](assets/image-20240704154919-g3qmq6g.png)​
 
-## 4.C 完全的设计空间和剪枝
+### 4.C 完全的设计空间和剪枝
 
 两个设计空间都是线性变换空间。
 
