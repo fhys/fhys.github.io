@@ -1119,62 +1119,65 @@ M_{D_{st}\rightarrow D_A}=\Omega^A_{D_{st}\rightarrow E_{st}}\times L_{E_{st}\ri
 <h3 id="4a-access-entry">4.A Access Entry设计空间</h3>
 <p>假设数据的访问是线性的，即数据访问的索引，是迭代域索引的线性组合，<span class="arithmatex">\(A[ai+j]\)</span>是线性的，<span class="arithmatex">\(A[i^2]\)</span>是非线性的。</p>
 <p>对于一个架构来说，其数据复用可以考虑为张量元素再架构时空戳上的运动，即不同时空戳上访问的张量元素相同，那么可以给出以下式子</p>
-<p>$$
+<div class="arithmatex">\[
 \vec{n'}=M_{D_{st}\rightarrow D_A}
 \begin{pmatrix}
- \vec{p_d}\
+ \vec{p_d}\\
 \vec{t_d}
 \end{pmatrix}
 =M_{D_{st}\rightarrow D_A}\left(
 \begin{pmatrix}
- \vec{p_d}\
+ \vec{p_d}\\
 \vec{t_d}
 \end{pmatrix}
 +\vec{r}
 \right)
-\Longrightarrow</p>
-<p>\mathbf{0}
+\Longrightarrow
+\mathbf{0}
 =M_{D_{st}\rightarrow D_A}\vec{r}
-$$</p>
+\]</div>
 <p>其中<span class="arithmatex">\(\vec{r}\)</span>是张量元素在时空戳中的运动方向。对于一个2D阵列<span class="arithmatex">\(\vec{r}\)</span>可以表示为<span class="arithmatex">\((x,y|t)\)</span>，那么可以得到7个方向向量</p>
 <p>​<img alt="image" src="../../../../Rubick%E7%AC%94%E8%AE%B0/assets/image-20240704151504-erajacn.png" />​</p>
 <p>由这些方向向量可以得到一个3D的设计空间，可以得到<span class="arithmatex">\(C^1_7+C_7^2+C_7^3=63\)</span>种设计，移除一些冲突、重复的、对称的可以得到14种设计。同时复用也可以看作是不同数据流时空戳其对应的entry时空戳是同一个。</p>
-<p>$$
+<div class="arithmatex">\[
 \begin{equation}
 \begin{pmatrix}
- \vec{p_e}\
+\vec{p_e}\\
 \vec{t_e}
 \end{pmatrix}
-=\Omega_{D_{st}\rightarrow E_{st}}
+=
+\Omega_{D_{st}\rightarrow E_{st}}
 \begin{pmatrix}
- \vec{p_d}\
+ \vec{p_d}\\
 \vec{t_d}
 \end{pmatrix}
-=\Omega_{D_{st}\rightarrow E_{st}}\left(
+=\Omega_{D_{st}
+\rightarrow 
+E_{st}}\left(
 \begin{pmatrix}
- \vec{p_d}\
+ \vec{p_d}\\
 \vec{t_d}
 \end{pmatrix}
 +\vec{r}
 \right)
-\Longrightarrow</p>
-<p>\mathbf{0}
+\Longrightarrow
+\mathbf{0}
 =\Omega_{D_{st}\rightarrow E_{st}}\vec{r}
 \end{equation}
-$$</p>
+\]</div>
 <p>对于一个<span class="arithmatex">\(\vec{r}=(x,y\ | \ t)\)</span>，<span class="arithmatex">\(\Omega_{D_{st}\rightarrow E_{st}}\)</span>应该是3*3的大小，考虑非可重构，即数据流的空间戳和entry的空间戳映射关系不变，将<span class="arithmatex">\(e_{02}\)</span>和<span class="arithmatex">\(e_{12}\)</span>置0。并且根据范式来设置其他元素的取值范围</p>
-<p>$$
+<div class="arithmatex">\[
 \begin{pmatrix}
- \vec{p_e}\
+ \vec{p_e}\\
 \vec{t_e}
 \end{pmatrix}
 =\Omega_{D_{st}\rightarrow E_{st}}
 \begin{pmatrix}
- \vec{p_d}\
+ \vec{p_d}\\
 \vec{t_d}
-\end{pmatrix}</p>
-<p>\Longrightarrow</p>
-<div class="arithmatex">\[\begin{pmatrix}
+\end{pmatrix}
+\Longrightarrow
+\begin{pmatrix}
  f(\vec{p_d})\\
 h(\vec{p_d},\vec{t_d})
 \end{pmatrix}
@@ -1182,14 +1185,14 @@ h(\vec{p_d},\vec{t_d})
 \begin{pmatrix}
  \vec{p_d}\\
 \vec{t_d}
-\end{pmatrix}\]</div>
-<p>\Longrightarrow</p>
-<p>\Omega_{D_{st}\rightarrow E_{st}}=\begin{pmatrix}
- e_{00} &amp; e_{01}  &amp; 0\
- e_{10} &amp; e_{11}  &amp; 0 \
+\end{pmatrix}
+\Longrightarrow
+\Omega_{D_{st}\rightarrow E_{st}}=\begin{pmatrix}
+ e_{00} &amp; e_{01}  &amp; 0\\
+ e_{10} &amp; e_{11}  &amp; 0 \\
  e_{20}  &amp; e_{21}  &amp; e_{22}
 \end{pmatrix}
-$$</p>
+\]</div>
 <p>‍</p>
 <p>设定<span class="arithmatex">\(e_{ii}\in \{0,1\};e_{ij}\in \{0,-1\},i\neq j \ and j\neq 2;e_{02},e_{12} = 0\)</span>，同时考虑约束<span class="arithmatex">\(\sum_j a_{ij} \geq 0\)</span>，即索引不可能小于等于0，有36种情况(0、1行3种情况，2行4种情况)；使用方向向量进行测试可能的<span class="arithmatex">\(\Omega_{D_{st}\rightarrow E_{st}}\)</span>，规则如下：</p>
 <ol>
