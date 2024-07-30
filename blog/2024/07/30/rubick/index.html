@@ -840,6 +840,8 @@
 <h2 id="2-backround">2 Backround</h2>
 <h3 id="2a">2.A 张量基础</h3>
 <p>‍</p>
+<details class="note">
+<summary>Note</summary>
 <blockquote>
 <ul>
 <li>
@@ -851,6 +853,7 @@
 <li>如对于一个一维卷积，其迭代域记为<span class="arithmatex">\(D_S=\{S[i,j]:0\leq i&lt;4,0\leq j&lt;3\}\)</span></li>
 </ul>
 </blockquote>
+</details>
 <p>‍</p>
 <ul>
 <li>张量域：表示为张量中的所有元素，使用<span class="arithmatex">\(\vec{n'}\)</span>表示向量元素</li>
@@ -858,6 +861,8 @@
 <div class="arithmatex">\[
 D_A=\left\{A(\vec{n'})\right\}
 \]</div>
+<details class="note">
+<summary>Note</summary>
 <blockquote>
 <ul>
 <li>
@@ -891,6 +896,7 @@ D_A=\left\{A(\vec{n'})\right\}
 </li>
 </ul>
 </blockquote>
+</details>
 <p>本文中使用的记号为</p>
 <div class="arithmatex">\[
 \begin{equation}
@@ -927,6 +933,8 @@ k
 <ul>
 <li>数据流</li>
 </ul>
+<details class="note">
+<summary>Note</summary>
 <blockquote>
 <p>4.1 Dataflow Relation</p>
 <p>给定语句<span class="arithmatex">\(S\)</span>和迭代域<span class="arithmatex">\(D_S\)</span>，以及相应的迭代向量<span class="arithmatex">\(\vec{n}\)</span>，dataflow被定义为如下形式</p>
@@ -987,6 +995,7 @@ loop\; instance:[i,j,k]=[0,0,1],[1,0,0],[0,1,0]
 \Theta_{S,D}=\{ S[i,j,k] \rightarrow (PE[i\ mod\ 8,\ j \ mod \ 8]\; | \; T[i/8,j/8,(i\ mod\ 8+\ j \ mod \ 8+k)])\}
 \]</div>
 </blockquote>
+</details>
 <p>本文记为</p>
 <div class="arithmatex">\[
 \begin{equation}
@@ -996,6 +1005,8 @@ loop\; instance:[i,j,k]=[0,0,1],[1,0,0],[0,1,0]
 <ul>
 <li>张量移动(Tensor Movement)</li>
 </ul>
+<details class="note">
+<summary>Note</summary>
 <blockquote>
 <p>4.2 Data Assignment Relation</p>
 <p>data assignment relation是指特定PE在特定时刻访问的元素，即spacetime-stamp到元素的映射，由访问函数是循环实例到元素的映射，数据流是循环实例到spacetime-stamp的映射，所以可以由数据流和访问函数得到data assignment relation</p>
@@ -1047,6 +1058,7 @@ A_{S,F}\Theta_{S,D}^{-1}=
 \]</div>
 <p>​<img alt="image" src="../../../../Rubick%E7%AC%94%E8%AE%B0/assets/image-20240629192115-bntyf8s.png" />​</p>
 </blockquote>
+</details>
 <p>本文记为</p>
 <div class="arithmatex">\[
 \begin{equation}
