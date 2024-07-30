@@ -510,6 +510,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#rubick" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rubick
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tenet" class="md-nav__link">
     <span class="md-ellipsis">
       TENET笔记
@@ -651,6 +660,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#rubick" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rubick
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tenet" class="md-nav__link">
     <span class="md-ellipsis">
       TENET笔记
@@ -673,6 +691,56 @@
       <header class="md-typeset">
         <h1 id="2024">七月 2024</h1>
       </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-07-19 00:00:00">2024年7月19日</time></li>
+        
+          <li class="md-meta__item">
+            分类于
+            
+              <a href="../../category/note/" class="md-meta__link">note</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 15 分钟阅读时间
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="rubick"><a class="toclink" href="../../2024/07/19/rubick/">Rubick</a></h2>
+<ul>
+<li>作者：卢丽强，罗子璋，梁云*</li>
+<li>单位：北京大学，浙江大学</li>
+<li>DAC’23，TCAD‘24</li>
+</ul>
+<h3 id="abstract"><a class="toclink" href="../../2024/07/19/rubick/#abstract">Abstract</a></h3>
+<p>之前的工作集中于张量元素的复用，而没有去探索底层架构的实现。通过将数据流分解为两种低层级IR来暴露架构实现：</p>
+<ul>
+<li>access entry：是一个时空戳，空间戳表示具体的入口，即memory port，时间戳表示相应时间的端口</li>
+<li>data layout：常规意义的data layout，结合access entry可以表示memory bank</li>
+</ul>
+<p>结果上，Rubick通过优化access entry IR减少了82.4%的布线资源，仅增加2.7%的延迟(使用脉动阵列的形式），通过优化data layout IR减少了70.8%的内存开销，并且通过在两种IR各自的子空间中剪枝，将DSE时间加速了<span class="arithmatex">\(1.1\times 10^5\)</span>。</p>
+
+    
+      <nav class="md-post__action">
+        <a href="../../2024/07/19/rubick/">
+          继续阅读
+        </a>
+      </nav>
+    
+  </div>
+</article>
       
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">
