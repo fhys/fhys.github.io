@@ -1,6 +1,8 @@
 ---
-date:
-  created: 2024-07-19
+date: 2024-07-19
+readtime: 15
+categories: 
+  - note
 ---
 
 
@@ -26,18 +28,23 @@ date:
 1. 循环实例被分配给PE阵列
 2. PE上上循环实例的执行顺序
 
-``` c++
-for(m=1;m<M;m++)
-	for(n=1;n<N;n++)
-		for(k=1;k<K;k++)
-			S:C[m,n] += A[m,k]*B[k,n]
-```
->
-> 对于以上一个矩阵乘法的三重循环，有三维迭代空间，一个循环实例对应于一个语句实例，即$S(m,n,k)$。定义PE的集合(space-stamp)$\{PE(x,y) | x\in[1,X], y \in [1,Y]\}$。
->
-> 1可以被描述为一个映射$S(m,n,k)\rightarrow PE(x,y)$  
->
-> 2可以描述为$S(m,n,k)|T(t) PE(x,y)\rightarrow S(m',n',k')|T(t+1) PE(x,y)$​
+
+
+??? note
+
+    ``` c++
+    for(m=1;m<M;m++)
+      for(n=1;n<N;n++)
+        for(k=1;k<K;k++)
+          S:C[m,n] += A[m,k]*B[k,n]
+    ```
+
+    对于以上一个矩阵乘法的三重循环，有三维迭代空间，一个循环实例对应于一个语句实例，即$S(m,n,k)$。定义PE的集合(space-stamp)$\{PE(x,y) | x\in[1,X], y \in [1,Y]\}$。
+
+    1可以被描述为一个映射$S(m,n,k)\rightarrow PE(x,y)$  
+
+    2可以描述为$S(m,n,k)|T(t) PE(x,y)\rightarrow S(m',n',k')|T(t+1) PE(x,y)$​
+  
 
 之前的以计算为中心和数据为中心的表示不能完整表示设计空间，如不能做仿射变换。以计算为中心的表示不能直接对数据传输和重用进行建模。数据中心的表示建模没有显示的描述张量元素的维度，计算的性能的指标不够准确。
 
@@ -54,7 +61,8 @@ for(m=1;m<M;m++)
 
 ### 3.1 Notation Basics
 
-​![image](assets/image-20240515101837-8wcey7n.png)​
+
+![image](assets/image-20240515101837-8wcey7n.png)​
 
 * 迭代域(Iteration Domain)
 
@@ -71,14 +79,18 @@ for(m=1;m<M;m++)
   * $$
     \vec{f} = A_{S,F}\vec{n}
     $$
-  * 对于Fig.1中的一维卷积，张量$Y$的访问函数是$\{S[i,j]\rightarrow Y[i]: 0\leq i <4, 0\leq j <3\}$，表示循环实例$S[i,j]$访问张量元素$Y[i]$，可表示为如下形式
-  * $$
-    \vec{f}=
-    \begin{bmatrix}
-     0 &1
-    \end{bmatrix}
-    \vec{n}
+  * 对于Fig.1中的一维卷积，张量$Y$的访问函数是$\{S[i,j]\rightarrow Y[i]: 0\leq i <4, 0\leq j <3\}$，表示循环实例$S[i,j]$访问张量元素$Y[i]$
+
+??? note
+
+    可表示为如下形式
     $$
+      \vec{f}=
+      \begin{bmatrix}
+      0 &1
+      \end{bmatrix}
+      \vec{n}
+      $$
 
 ### 3.2 现有数据流表示的限制
 

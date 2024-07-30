@@ -4,6 +4,7 @@ site_url: https://fhys.github.io/
 theme:
   name: material
   palette: 
+    - primary: blue grey
     # Palette toggle for light mode
     - scheme: default
       toggle:
@@ -31,7 +32,9 @@ theme:
 
 plugins:
   - search
-  - blog
+  - blog:
+      blog_toc: true
+      archive_date_format: MMMM yyyy
 
 markdown_extensions:
   - pymdownx.arithmatex:
@@ -43,6 +46,8 @@ markdown_extensions:
       anchor_linenums: true
       auto_title: true
   - pymdownx.superfences 
+  - admonition
+  - pymdownx.details
 
 
 extra_javascript:
@@ -56,4 +61,5 @@ extra_css:
 nav:
   - Home: index.md
   - Publications: Publications.md
-  - Blog: blog/index.md
+  - Blog: 
+    - blog/index.md

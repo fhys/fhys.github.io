@@ -2,4 +2,4 @@
 site
 .cache
 __pycache__
-
+*.zip
