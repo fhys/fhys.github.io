@@ -8,10 +8,10 @@
       
       
       
-        <link rel="canonical" href="https://fhys.github.io/blog/2024/07/19/rubick/">
+        <link rel="canonical" href="https://fhys.github.io/blog/2024/07/30/rubick/">
       
       
-        <link rel="prev" href="../tenet%E7%AC%94%E8%AE%B0/">
+        <link rel="prev" href="../../19/tenet%E7%AC%94%E8%AE%B0/">
       
       
       
@@ -621,6 +621,114 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#2-backround" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Backround
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Backround">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2a" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.A 张量基础
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2b" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.B 空间数据流
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2c-motivation" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.C motivation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 数据流分解
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 数据流分解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3a" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.A 数据流分解
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 数据流设计空间探索
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 数据流设计空间探索">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4a-access-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.A Access Entry设计空间
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4b-data-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.B data layout 设计空间
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4c" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.C 完全的设计空间和剪枝
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -658,7 +766,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2024-07-19 00:00:00" class="md-ellipsis">2024年7月19日</time>
+                        <time datetime="2024-07-30 00:00:00" class="md-ellipsis">2024年7月30日</time>
                       </div>
                     </li>
                     
@@ -729,8 +837,8 @@
 <li>给出的IR和实现细节之间的关系，并开发了一个Chisel模板来使用IR进行硬件生成</li>
 </ul>
 <p>​<img alt="image" src="../../../../Rubick%E7%AC%94%E8%AE%B0/assets/image-20240704163056-m1phdf9.png" />​</p>
-<h1 id="2-backround">2 Backround</h1>
-<h2 id="2a">2.A 张量基础</h2>
+<h2 id="2-backround">2 Backround</h2>
+<h3 id="2a">2.A 张量基础</h3>
 <p>‍</p>
 <blockquote>
 <ul>
@@ -820,7 +928,7 @@ k
 <li>数据流</li>
 </ul>
 <blockquote>
-<h3 id="41-dataflow-relation">4.1 Dataflow Relation</h3>
+<p>4.1 Dataflow Relation</p>
 <p>给定语句<span class="arithmatex">\(S\)</span>和迭代域<span class="arithmatex">\(D_S\)</span>，以及相应的迭代向量<span class="arithmatex">\(\vec{n}\)</span>，dataflow被定义为如下形式</p>
 <div class="arithmatex">\[
 \begin{equation}
@@ -889,7 +997,7 @@ loop\; instance:[i,j,k]=[0,0,1],[1,0,0],[0,1,0]
 <li>张量移动(Tensor Movement)</li>
 </ul>
 <blockquote>
-<h3 id="42-data-assignment-relation">4.2 Data Assignment Relation</h3>
+<p>4.2 Data Assignment Relation</p>
 <p>data assignment relation是指特定PE在特定时刻访问的元素，即spacetime-stamp到元素的映射，由访问函数是循环实例到元素的映射，数据流是循环实例到spacetime-stamp的映射，所以可以由数据流和访问函数得到data assignment relation</p>
 <div class="arithmatex">\[
 \begin{aligned}
@@ -956,7 +1064,7 @@ S(i,j):Y(i)+=A(i+stride\cdot j)\times B(j)
 <p>这里的数据流的理解为，黄色方框(t=0)和绿色方框(t=1)是同一时刻执行的计算，并且分别对应A和B不同的元素，左边每一行的i代表输出的结果Y的索引，3个数据流的步长分别1,2,1</p>
 <p>但此处的compute-centric没有体现出(b)的步长为2？对于(b)A中x的系数应该为2以体现步长为2。但可以通过(b)(c)得出相同的架构，但具有的不同的数据流，因此分解出底层架IR可以减小搜索空间。</p>
 <p>​<img alt="image" src="../../../../Rubick%E7%AC%94%E8%AE%B0/assets/image-20240703201811-3mtuj9o.png" />​</p>
-<h1 id="3">3 数据流分解</h1>
+<h2 id="3">3 数据流分解</h2>
 <p>分解为access entry和data layout。access entry描述的是数据入口(memory端口，以及tensor元素的运动方向)，data layout描述数据如何存放在不同的bank中。</p>
 <p><strong>定义1(Entry spacetime domain):</strong>  <span class="arithmatex">\(E_{st}\)</span>定义为entry的时空戳，<span class="arithmatex">\(E_{st}=\{(E(\vec{p_e})|T(\vec{t_e}))\}\)</span>，类似于PE的时空戳定义，指entry <span class="arithmatex">\(E(\vec{p_e})\)</span>在时钟周期<span class="arithmatex">\(T(\vec{t_e})\)</span>加载数据并送入PE阵列。</p>
 <p>​<img alt="image" src="../../../../Rubick%E7%AC%94%E8%AE%B0/assets/image-20240704100805-ong731h.png" />​</p>
