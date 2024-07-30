@@ -1,5 +1,5 @@
 ---
-date: 2024-07-19
+date: 2024-07-30
 readtime: 15
 categories: 
   - note
@@ -39,9 +39,9 @@ categories:
 
 ​![image](assets/image-20240704163056-m1phdf9.png)​
 
-# 2 Backround
+## 2 Backround
 
-## 2.A 张量基础
+### 2.A 张量基础
 
 ‍
 
@@ -120,7 +120,7 @@ $$
 
 * 数据流
 
-> ### 4.1 Dataflow Relation
+>  4.1 Dataflow Relation
 >
 > 给定语句$S$和迭代域$D_S$，以及相应的迭代向量$\vec{n}$，dataflow被定义为如下形式
 >
@@ -204,7 +204,7 @@ $$
 
 * 张量移动(Tensor Movement)
 
-> ### 4.2 Data Assignment Relation
+> 4.2 Data Assignment Relation
 >
 > data assignment relation是指特定PE在特定时刻访问的元素，即spacetime-stamp到元素的映射，由访问函数是循环实例到元素的映射，数据流是循环实例到spacetime-stamp的映射，所以可以由数据流和访问函数得到data assignment relation
 >
@@ -287,7 +287,7 @@ $$
 
 ​![image](assets/image-20240703201811-3mtuj9o.png)​
 
-# 3 数据流分解
+## 3 数据流分解
 
 分解为access entry和data layout。access entry描述的是数据入口(memory端口，以及tensor元素的运动方向)，data layout描述数据如何存放在不同的bank中。
 
