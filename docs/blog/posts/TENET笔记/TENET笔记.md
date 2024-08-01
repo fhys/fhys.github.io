@@ -1,6 +1,6 @@
 ---
 date: 2024-07-19
-readtime: 15
+readtime: 30
 categories: 
   - note
 ---
